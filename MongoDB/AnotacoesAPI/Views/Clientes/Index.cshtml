@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MongoDB.Models.Cliente>
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>CPF</th>
+        <th>Detalhes</th>
+        <th>Deletar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <a>
+                @item.Nome
+            </a>
+        </td>
+        <td>
+            <a>
+                @item.Email
+            </a>
+        </td>
+        <td>
+            <a>
+                @item.CPF
+            </a>
+        </td>
+        <td>
+            <a href="Clientes/details/@item.Id">detalhes</a>
+        </td>
+        <td>
+            <a href="Clientes/delete/@item.Id">deletar</a>
+        </td>
+    </tr>
+    }
+</table>
